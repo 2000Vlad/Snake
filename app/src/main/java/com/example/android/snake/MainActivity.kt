@@ -24,10 +24,6 @@ class MainActivity : AppCompatActivity(), GestureDetector.OnGestureListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        /*snakeTable.scoreListener = this::updateScore
-        snakeTable.endListener = {
-
-        }*/
         snakeTable.setOnTouchListener { v, event ->
             detector.onTouchEvent(event)
              true
@@ -35,6 +31,23 @@ class MainActivity : AppCompatActivity(), GestureDetector.OnGestureListener {
         snakeTable.scoreListener = this::updateScore
         snakeTable.speed = intent.getLongExtra(SPEED, MEDIUM)
         snakeTable.start()
+
+        arrowUp.setOnClickListener {
+            if(snakeTable.table.moveDirection != DOWN)
+                snakeTable.table.moveDirection = UP
+        }
+        arrowDown.setOnClickListener {
+            if(snakeTable.table.moveDirection != UP)
+                snakeTable.table.moveDirection = DOWN
+        }
+        arrowLeft.setOnClickListener {
+            if(snakeTable.table.moveDirection != RIGHT)
+                snakeTable.table.moveDirection = LEFT
+        }
+        arrowRight.setOnClickListener {
+            if(snakeTable.table.moveDirection != LEFT)
+                snakeTable.table.moveDirection = RIGHT
+        }
 
     }
 
