@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SnakeView">
+        <attr name="tableWidth" format="integer"/>
+        <attr name="tableHeight" format="integer"/>
+        <attr name="bonusColor" format="color"/>
+        <attr name="snakeHeadColor" format="color"/>
+        <attr name="snakeBodyColor" format="color"/>
+        <attr name="cellSize" format="dimension"/>
+    </declare-styleable>
+
+</resources>
